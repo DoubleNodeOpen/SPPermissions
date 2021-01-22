@@ -38,7 +38,7 @@ class SPPermissionsListHeaderView: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        titleLabel.textColor = SPPermissionsColor.secondaryLabel
+        titleLabel.textColor = SPPermissions.color.secondaryLabel
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(titleLabel)
         titleLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true

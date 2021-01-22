@@ -49,20 +49,20 @@ class SPPermissionsDialogView: UIView {
     
     init() {
         super.init(frame: .zero)
-        backgroundColor = SPPermissionsColor.systemBackground
+        backgroundColor = SPPermissions.color.systemBackground
         layer.cornerRadius = 15
         layer.anchorPoint = CGPoint.init(x: 0.5, y: 0.5)
         insetsLayoutMarginsFromSafeArea = false
         
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.systemFont(ofSize: 29, weight: .bold)
-        titleLabel.textColor = SPPermissionsColor.label
+        titleLabel.textColor = SPPermissions.color.label
         
         addSubview(titleLabel)
         
         subtitleLabel.numberOfLines = 0
         subtitleLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        subtitleLabel.textColor = SPPermissionsColor.secondaryLabel
+        subtitleLabel.textColor = SPPermissions.color.secondaryLabel
         addSubview(subtitleLabel)
         
         tableView.contentInsetAdjustmentBehavior = .never

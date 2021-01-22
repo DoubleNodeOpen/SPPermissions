@@ -21,49 +21,21 @@
 
 import UIKit
 
-#if os(iOS)
-class SPPermissionsCloseButton: UIButton {
-    
-    /**
-     Draw close icon.
-     */
-    let iconView = CloseIconView()
-    
-    init() {
-        super.init(frame: .zero)
-        backgroundColor = .clear
-        iconView.backgroundColor = .clear
-        iconView.isUserInteractionEnabled = false
-        addSubview(iconView)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        iconView.frame = bounds
-    }
-    
-    /**
-     Drawable close icon.
-     */
-    class CloseIconView: UIView {
-        
-        /**
-         Color of icon.
-         */
-        var elementColor: UIColor = SPPermissions.color.secondaryLabel
-        
-        /**
-         Background color.
-         */
-        var areaColor: UIColor = SPPermissions.color.secondarySystemBackground
-        
-        override func draw(_ rect: CGRect) {
-            SPPermissionsDraw.drawClose(frame: rect, resizing: .aspectFit, background: areaColor, element: elementColor)
-        }
-    }
+/**
+ Required methods and property for text class.
+ */
+public protocol SPPermissionsColorProtocol {
+    #if os(iOS)
+    @available(iOS 13.0, *)
+    var userInterfaceStyle: UIUserInterfaceStyle { get }
+    #endif
+    var base: UIColor { get }
+    var black: UIColor { get }
+    var white: UIColor { get }
+    var systemBackground: UIColor { get }
+    var secondarySystemBackground: UIColor { get }
+    var separator: UIColor { get }
+    var label: UIColor { get }
+    var secondaryLabel: UIColor { get }
+    var buttonArea: UIColor { get }
 }
-#endif

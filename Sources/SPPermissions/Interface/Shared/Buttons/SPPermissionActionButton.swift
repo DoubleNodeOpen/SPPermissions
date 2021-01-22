@@ -41,22 +41,22 @@ public class SPPermissionActionButton: UIButton {
     /**
      Title color for button when permissin not authorized yet.
      */
-    public var allowTitleColor: UIColor = SPPermissionsColor.base { didSet { applyStyle() } }
+    public var allowTitleColor: UIColor = SPPermissions.color.base { didSet { applyStyle() } }
     
     /**
      Background button color when permissin not authorized yet.
      */
-    public var allowBackgroundColor: UIColor = SPPermissionsColor.buttonArea { didSet { applyStyle() } }
+    public var allowBackgroundColor: UIColor = SPPermissions.color.buttonArea { didSet { applyStyle() } }
     
     /**
      Title color for button when permissin authorized.
      */
-    public var allowedTitleColor: UIColor = SPPermissionsColor.white { didSet { applyStyle() } }
+    public var allowedTitleColor: UIColor = SPPermissions.color.white { didSet { applyStyle() } }
     
     /**
      Background button color when permission authorized.
      */
-    public var allowedBackgroundColor: UIColor = SPPermissionsColor.base { didSet { applyStyle() } }
+    public var allowedBackgroundColor: UIColor = SPPermissions.color.base { didSet { applyStyle() } }
     
     /**
      For which permission generate this button.

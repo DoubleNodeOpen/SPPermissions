@@ -83,7 +83,7 @@ public class SPPermissionTableViewCell: UITableViewCell {
         
         contentView.addSubview(permissionTitleLabel)
         permissionTitleLabel.numberOfLines = 0
-        permissionTitleLabel.textColor = SPPermissionsColor.label
+        permissionTitleLabel.textColor = SPPermissions.color.label
         permissionTitleLabel.font = UIFont.systemFont(ofSize: 19, weight: .semibold)
         permissionTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         permissionTitleLabel.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -15).isActive = true
@@ -92,7 +92,7 @@ public class SPPermissionTableViewCell: UITableViewCell {
         
         contentView.addSubview(permissionDescriptionLabel)
         permissionDescriptionLabel.numberOfLines = 0
-        permissionDescriptionLabel.textColor = SPPermissionsColor.secondaryLabel
+        permissionDescriptionLabel.textColor = SPPermissions.color.secondaryLabel
         permissionDescriptionLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         permissionDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         permissionDescriptionLabel.topAnchor.constraint(equalTo: permissionTitleLabel.bottomAnchor, constant: 3).isActive = true
@@ -127,10 +127,10 @@ public class SPPermissionTableViewCell: UITableViewCell {
         button.permission = permission
         button.allowTitle = SPPermissions.text.allow
         button.allowedTitle = SPPermissions.text.allowed
-        button.allowTitleColor = SPPermissionsColor.base
-        button.allowBackgroundColor = SPPermissionsColor.buttonArea
-        button.allowedTitleColor = SPPermissionsColor.white
-        button.allowedBackgroundColor = SPPermissionsColor.base
+        button.allowTitleColor = SPPermissions.color.base
+        button.allowBackgroundColor = SPPermissions.color.buttonArea
+        button.allowedTitleColor = SPPermissions.color.white
+        button.allowedBackgroundColor = SPPermissions.color.base
         button.style = permission.isAuthorized ? SPPermissionActionButton.Style.allowed : SPPermissionActionButton.Style.base
         
         iconView.permission = permission

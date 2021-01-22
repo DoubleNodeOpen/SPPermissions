@@ -30,7 +30,7 @@ class SPPermissionsGradeBlurView: UIView {
     init() {
         super.init(frame: CGRect.zero)
         backgroundColor = .clear
-        setGradeColor(SPPermissionsColor.black)
+        setGradeColor(SPPermissions.color.black)
         setGradeAlpha(0)
         setBlurRadius(0)
         commonInit()

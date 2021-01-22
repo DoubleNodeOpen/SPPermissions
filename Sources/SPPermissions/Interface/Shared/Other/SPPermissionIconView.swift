@@ -35,7 +35,7 @@ public class SPPermissionIconView: UIView {
     /**
      Color if icon.
      */
-    public var color = SPPermissionsColor.base { didSet { self.setNeedsDisplay() } }
+    public var color = SPPermissions.color.base { didSet { self.setNeedsDisplay() } }
     
     init(_ permission: SPPermission) {
         self.permission = permission

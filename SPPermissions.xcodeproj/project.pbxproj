@@ -49,6 +49,8 @@
 		9E50E9FC238B257300B71477 /* SPPermissions.h in Headers */ = {isa = PBXBuildFile; fileRef = F43F8D9E236ECC9D00B94208 /* SPPermissions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E50E9FD238B266A00B71477 /* SPPermissions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E50E9C8238B249C00B71477 /* SPPermissions.framework */; };
 		9E50E9FE238B266A00B71477 /* SPPermissions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E50E9C8238B249C00B71477 /* SPPermissions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AD0FF73B25BB969E00FD8B88 /* SPPermissionsColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0FF73A25BB969E00FD8B88 /* SPPermissionsColorProtocol.swift */; };
+		AD0FF73C25BB969E00FD8B88 /* SPPermissionsColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0FF73A25BB969E00FD8B88 /* SPPermissionsColorProtocol.swift */; };
 		AD48871225BB5F4D00CD472C /* SPPermissionsTextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48871125BB5F4D00CD472C /* SPPermissionsTextProtocol.swift */; };
 		AD48871325BB5F4D00CD472C /* SPPermissionsTextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48871125BB5F4D00CD472C /* SPPermissionsTextProtocol.swift */; };
 		ADF7403D25BB79190044513A /* AppPermissionsText.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7403C25BB79190044513A /* AppPermissionsText.swift */; };
@@ -154,6 +156,7 @@
 		9E50E9BA238B1F1A00B71477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E50E9BC238B1F1A00B71477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E50E9C8238B249C00B71477 /* SPPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD0FF73A25BB969E00FD8B88 /* SPPermissionsColorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionsColorProtocol.swift; sourceTree = "<group>"; };
 		AD48871125BB5F4D00CD472C /* SPPermissionsTextProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPermissionsTextProtocol.swift; sourceTree = "<group>"; };
 		ADF7403C25BB79190044513A /* AppPermissionsText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPermissionsText.swift; sourceTree = "<group>"; };
 		E32A92D924B8DB1E00E4DCC5 /* SPTrackingPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTrackingPermission.swift; sourceTree = "<group>"; };
@@ -523,6 +526,7 @@
 			isa = PBXGroup;
 			children = (
 				F4EA268A236F2BB90070B2BA /* SPPermissionProtocol.swift */,
+				AD0FF73A25BB969E00FD8B88 /* SPPermissionsColorProtocol.swift */,
 				F4FB9E742379712400F7272C /* SPPermissionsControllerProtocol.swift */,
 				F4FB9E782379721D00F7272C /* SPPermissionsDataSource.swift */,
 				F4FB9E7B2379731100F7272C /* SPPermissionsDelegate.swift */,
@@ -766,6 +770,7 @@
 				9E50E9E2238B24EA00B71477 /* SPPermissionsDialogController.swift in Sources */,
 				9E50E9F2238B251D00B71477 /* SPMotionPermission.swift in Sources */,
 				9E50E9F1238B251A00B71477 /* SPMicrophonePermission.swift in Sources */,
+				AD0FF73C25BB969E00FD8B88 /* SPPermissionsColorProtocol.swift in Sources */,
 				9E50E9EA238B250700B71477 /* SPPermissionLocationHandler.swift in Sources */,
 				9E50E9DD238B24DC00B71477 /* SPPermissionTableViewCell.swift in Sources */,
 				9E50E9DE238B24DF00B71477 /* SPPermissionsGradeBlurView.swift in Sources */,
@@ -814,6 +819,7 @@
 				F4EA267A236F2B890070B2BA /* SPMicrophonePermission.swift in Sources */,
 				F4EA2679236F2B890070B2BA /* SPContactsPermission.swift in Sources */,
 				F499B207238087A800B83B08 /* SPPermissionsCloseButton.swift in Sources */,
+				AD0FF73B25BB969E00FD8B88 /* SPPermissionsColorProtocol.swift in Sources */,
 				F4EA2666236ED5220070B2BA /* SPPermission.swift in Sources */,
 				F4EA2678236F2B890070B2BA /* SPCameraPermission.swift in Sources */,
 				F499B1FF23801B0000B83B08 /* SPPermissionsDialogView.swift in Sources */,

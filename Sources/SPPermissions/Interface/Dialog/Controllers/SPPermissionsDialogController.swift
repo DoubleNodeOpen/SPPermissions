@@ -80,6 +80,11 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        #if os(iOS)
+        if #available(iOS 13.0, *) {
+            view.overrideUserInterfaceStyle = SPPermissions.color.userInterfaceStyle
+        }
+        #endif
         view.addSubview(backgroundView)
         
         dialogView.titleLabel.text = titleText

@@ -23,6 +23,7 @@ import UIKit
 
 public class SPPermissions {
     
+    public static var color: SPPermissionsColorProtocol = SPPermissionsColor()
     public static var text: SPPermissionsTextProtocol = SPPermissionsText()
     
     /**

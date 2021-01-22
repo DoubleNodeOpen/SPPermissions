@@ -31,7 +31,7 @@ class SPPermissionsDialogFooterCommentView: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.systemFont(ofSize: 11, weight: .regular)
-        titleLabel.textColor = SPPermissionsColor.secondaryLabel.withAlphaComponent(0.5)
+        titleLabel.textColor = SPPermissions.color.secondaryLabel.withAlphaComponent(0.5)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
         titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor).isActive = true

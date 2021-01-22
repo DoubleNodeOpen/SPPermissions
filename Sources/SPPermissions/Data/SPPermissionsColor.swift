@@ -21,21 +21,28 @@
 
 import UIKit
 
-enum SPPermissionsColor {
-    
-    static var base: UIColor {
+public class SPPermissionsColor: SPPermissionsColorProtocol {
+
+    #if os(iOS)
+    @available(iOS 13.0, *)
+    public var userInterfaceStyle: UIUserInterfaceStyle {
+        return .unspecified
+    }
+    #endif
+
+    public var base: UIColor {
         return UIColor.systemBlue
     }
     
-    static var black: UIColor {
+    public var black: UIColor {
         return UIColor.black
     }
     
-    static var white: UIColor {
+    public var white: UIColor {
         return UIColor.white
     }
     
-    static var systemBackground: UIColor {
+    public var systemBackground: UIColor {
         #if os(iOS)
         if #available(iOS 13.0, *) {
             return UIColor.systemBackground
@@ -44,7 +51,7 @@ enum SPPermissionsColor {
         return UIColor.white
     }
     
-    static var secondarySystemBackground: UIColor {
+    public var secondarySystemBackground: UIColor {
         #if os(iOS)
         if #available(iOS 13.0, *) {
             return UIColor.secondarySystemBackground
@@ -53,7 +60,7 @@ enum SPPermissionsColor {
         return UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
     }
     
-    static var separator: UIColor {
+    public var separator: UIColor {
         if #available(iOS 13.0, tvOS 13.0, *) {
             return UIColor.separator
         } else {
@@ -61,7 +68,7 @@ enum SPPermissionsColor {
         }
     }
     
-    static var label: UIColor {
+    public var label: UIColor {
         if #available(iOS 13.0, tvOS 13.0, *) {
             return UIColor.label
         } else {
@@ -69,7 +76,7 @@ enum SPPermissionsColor {
         }
     }
     
-    static var secondaryLabel: UIColor {
+    public var secondaryLabel: UIColor {
         if #available(iOS 13.0, tvOS 13.0, *) {
             return UIColor.secondaryLabel
         } else {
@@ -77,7 +84,7 @@ enum SPPermissionsColor {
         }
     }
     
-    static var buttonArea: UIColor {
+    public var buttonArea: UIColor {
         if #available(iOS 13.0, tvOS 13.0, *) {
             return UIColor { (traits) -> UIColor in
                 return traits.userInterfaceStyle == .dark ? UIColor(red: 61/255, green: 62/255, blue: 66/255, alpha: 1) :

@@ -75,7 +75,12 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
+        #if os(iOS)
+        if #available(iOS 13.0, *) {
+            view.overrideUserInterfaceStyle = SPPermissions.color.userInterfaceStyle
+        }
+        #endif
+
         if #available(iOS 13.0, *) {
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(dismissAnimated))
         } else {
