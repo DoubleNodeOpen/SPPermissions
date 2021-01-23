@@ -78,6 +78,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         #if os(iOS)
         if #available(iOS 13.0, *) {
             view.overrideUserInterfaceStyle = SPPermissions.color.userInterfaceStyle
+            navigationController?.navigationBar.overrideUserInterfaceStyle = SPPermissions.color.userInterfaceStyle
         }
         #endif
 
