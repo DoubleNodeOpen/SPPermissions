@@ -82,11 +82,11 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         }
         #endif
 
-        if #available(iOS 13.0, *) {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(dismissAnimated))
-        } else {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissAnimated))
-        }
+//        if #available(iOS 13.0, *) {
+//            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(dismissAnimated))
+//        } else {
+//            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissAnimated))
+//        }
 
         navigationItem.title = titleText
         navigationItem.largeTitleDisplayMode = .automatic
@@ -107,6 +107,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
      */
     @objc func process(button: SPPermissionActionButton) {
         let permission = button.permission
+        let isPreviouslyDenied = permission.isDenied
         permission.request {
             
             button.update()
@@ -141,7 +142,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
              Show alert with propose go to settings and allow permission.
              For disable it implement protocol `SPPermissionsDelegate`.
              */
-            if permission.isDenied {
+            if permission.isDenied && isPreviouslyDenied {
                 var data = SPPermissionDeniedAlertData()
                 if self.delegate != nil {
                     guard let userData = self.delegate?.deniedData?(for: permission) else { return }

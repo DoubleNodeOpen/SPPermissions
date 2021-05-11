@@ -96,14 +96,16 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
         dialogView.tableView.register(SPPermissionsDialogFooterCommentView.self, forHeaderFooterViewReuseIdentifier: SPPermissionsDialogFooterCommentView.id)
         dialogView.tableView.register(SPPermissionTableViewCell.self, forCellReuseIdentifier: SPPermissionTableViewCell.id)
         dialogView.closeButton.addTarget(self, action: #selector(self.dimissWithDialog), for: .touchUpInside)
+        dialogView.closeButton.isHidden = true
+        dialogView.closeButton.isEnabled = false
         view.addSubview(dialogView)
         
         animator = UIDynamicAnimator(referenceView: view)
         snapBehavior = UISnapBehavior(item: dialogView, snapTo: dialogCenter)
         
-        let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(self.handleGesture(sender:)))
-        panGesture.maximumNumberOfTouches = 1
-        dialogView.addGestureRecognizer(panGesture)
+//        let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(self.handleGesture(sender:)))
+//        panGesture.maximumNumberOfTouches = 1
+//        dialogView.addGestureRecognizer(panGesture)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
@@ -205,6 +207,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
      */
     @objc func process(button: SPPermissionActionButton) {
         let permission = button.permission
+        let isPreviouslyDenied = permission.isDenied
         permission.request {
             button.update()
             let isAuthorized = permission.isAuthorized
@@ -240,7 +243,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
              Show alert with propose go to settings and allow permission.
              For disable it implement protocol `SPPermissionsDelegate`.
              */
-            if permission.isDenied {
+            if permission.isDenied && isPreviouslyDenied {
                 var data = SPPermissionDeniedAlertData()
                 if self.delegate != nil {
                     guard let userData = self.delegate?.deniedData?(for: permission) else { return }
