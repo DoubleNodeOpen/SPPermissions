@@ -77,7 +77,7 @@ public class SPPermissionTableViewCell: UITableViewCell {
         contentView.addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor).isActive = true
-        button.centerYAnchor.constraint(equalTo: contentView.layoutMarginsGuide.centerYAnchor).isActive = true
+//        button.centerYAnchor.constraint(equalTo: contentView.layoutMarginsGuide.centerYAnchor).isActive = true
         button.setContentHuggingPriority(UILayoutPriority(rawValue: 1000), for: .horizontal)
         button.setContentCompressionResistancePriority(UILayoutPriority(1000), for: .horizontal)
         
@@ -96,7 +96,7 @@ public class SPPermissionTableViewCell: UITableViewCell {
         permissionDescriptionLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         permissionDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         permissionDescriptionLabel.topAnchor.constraint(equalTo: permissionTitleLabel.bottomAnchor, constant: 3).isActive = true
-        permissionDescriptionLabel.trailingAnchor.constraint(equalTo: permissionTitleLabel.trailingAnchor).isActive = true
+//        permissionDescriptionLabel.trailingAnchor.constraint(equalTo: permissionTitleLabel.trailingAnchor).isActive = true
         permissionDescriptionLabel.leadingAnchor.constraint(equalTo: permissionTitleLabel.leadingAnchor).isActive = true
         permissionDescriptionLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor, constant: -verticalSpace).isActive = true
     }

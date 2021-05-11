@@ -45,6 +45,7 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerPro
     public func present(on controller: UIViewController) {
         let delegate = self.delegate
         for permission in permissions {
+            let isPreviouslyDenied = permission.isDenied
             permission.request {
                 if permission.isAuthorized {
                     delegate?.didAllow?(permission: permission)
@@ -55,7 +56,7 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerPro
                      Show alert with propose go to settings and allow permission.
                      For disable it implement protocol `SPPermissionsDelegate`.
                      */
-                    if permission.isDenied {
+                    if permission.isDenied && isPreviouslyDenied {
                         var data = SPPermissionDeniedAlertData()
                         if delegate != nil {
                             guard let userData = delegate?.deniedData?(for: permission) else { return }
